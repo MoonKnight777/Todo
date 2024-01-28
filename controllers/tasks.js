@@ -6,8 +6,8 @@ const getmyTasks = async (req, res) => {
     try {
         const userId = req.user._id;
         const userTasks = await Tasks.find({ userId });
-        if (!userTasks)
-            return respond(res, 200, "Task found successfully");
+        if (!userTasks) return next(new Errorhandler("No tasks created yet.",400))
+        return respond(res, 200, "Task found successfully");
     } catch (error) {
         next(error);
     }

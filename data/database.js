@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 
 const connectDB = () => {
 
-    mongoose.connect("mongodb://127.0.0.1:27017/Todo")
+    mongoose.connect(`${process.env.MONGO_DB_URL}`)
         .then((c) => {
             console.log(`Database Connected via ${c.connection.host}`);
         }).catch((err) => {
