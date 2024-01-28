@@ -1,5 +1,5 @@
 const isAuthenticated = require("../middleware/auth.js");
-const { getmyTasks, createTask, updateTask, deleteTask } = require("../controllers/Tasks.js");
+const { getmyTasks, createTask, updateTask, deleteTask } = require("../controllers/tasks.js");
 const router = require("express").Router();
 
 router.route("/")
