@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProfilePage</title>
+  <link rel="stylesheet" href="/stylesheets/profile.css">
+</head>
+
+<body>
+  <main>
+    <h1>Welcome, <%=username%></h1>
+  </main>
+  <button id="logout-btn">Logout</button>
+  <section>
+    <h1>Your Tasks</h1>
+    
+    <div class="taskscontainer">
+    </div>
+  </section>
+  <section>
+    <h1>Create Tasks</h1>
+    <form id="createTask-form" action="/tasks" method="post">
+      <input type="text" name="task" id="task">
+      <input type="submit" value="Create" id="create-btn">
+    </form>
+  </section>
+
+  <script src="/javascripts/profile.js"></script>
+</body>
+
+</html>

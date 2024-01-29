@@ -1,7 +1,7 @@
 const jwt = require("jsonwebtoken");
 
 
-function sendCookie(userdata, res, message, statusCode = 200) {
+function sendCookie(userdata, res) {
     const token = jwt.sign({ _id: userdata._id }, process.env.JWT_SECRET);
     res
         .cookie("token", token, {
@@ -10,11 +10,6 @@ function sendCookie(userdata, res, message, statusCode = 200) {
             sameSite: process.env.NODE_ENV === "development" ? "none" : "lax",
             secure: process.env.NODE_ENV === "development" ? true : false
         })
-        .status(statusCode)
-        .json({
-            success: true,
-            message
-        });
 }
 
 function destroyCookie(res) {

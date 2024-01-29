@@ -7,13 +7,13 @@ const getmyTasks = async (req, res) => {
         const userId = req.user._id;
         const userTasks = await Tasks.find({ userId });
         if (!userTasks) return next(new Errorhandler("No tasks created yet.",400))
-        return respond(res, 200, "Task found successfully");
+        return respond(res, 200, "Task found successfully",userTasks);
     } catch (error) {
         next(error);
     }
 }
 
-const createTask = async (req, res) => {
+const createTask = async (req, res,next) => {
     try {
         const { task } = req.body;
         const userId = req.user._id;

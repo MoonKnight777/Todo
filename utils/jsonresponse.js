@@ -1,7 +1,8 @@
-const respond = (res,statusCode,message)=>{
+const respond = (res,statusCode,message,payload=null)=>{
     return res.status(statusCode).json({
         success:true,
-        message
+        message,
+        payload
     });
 }
 module.exports = respond;
