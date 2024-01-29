@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 
 const connectDB = () => {
 
-    mongoose.connect(`${process.env.MONGO_DB_URL_LOCAL}`)
+    mongoose.connect(`${process.env.MONGO_DB_URL}`)
         .then((c) => {
             console.log(`Database Connected via ${c.connection.host}`);
         }).catch((err) => {
