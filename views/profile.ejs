@@ -6,28 +6,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ProfilePage</title>
   <link rel="stylesheet" href="/stylesheets/profile.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
-  <main>
-    <h1>Welcome, <%=username%></h1>
-  </main>
-  <button id="logout-btn">Logout</button>
-  <section>
-    <h1>Your Tasks</h1>
-    
-    <div class="taskscontainer">
+  <nav>
+    <div class="left">
+      <div class="logo">To<span>Do</span></div>
     </div>
-  </section>
-  <section>
-    <h1>Create Tasks</h1>
-    <form id="createTask-form" action="/tasks" method="post">
-      <input type="text" name="task" id="task">
-      <input type="submit" value="Create" id="create-btn">
-    </form>
-  </section>
+    <div class="right">
+      <a href="/profile">Profile</a>
+      <button id="logout-btn">Logout</button>
+    </div>
+  </nav>
 
-  <script src="/javascripts/profile.js"></script>
+  <main>
+    <h1>
+      <%=username%>
+    </h1>
+    <h3>
+      <%=email%>
+    </h3>
+  </main>
+
+
+  <div class="displayAndCreateTask">
+    <section class="displayTask">
+      <h1>Tasks</h1>
+      <div class="container">
+        <div class="taskContainer">
+          <p></p>
+          <input type="checkbox" name="" id="">
+          <button>delete</button>
+        </div>
+      </div>
+    </section>
+    <section class="createTask">
+      <h1>Create Tasks</h1>
+      <form id="createTask-form" action="/tasks" method="post">
+        <input type="text" name="task" id="task" placeholder="Enter new task">
+        <input type="submit" value="Create" id="create-btn">
+      </form>
+    </section>
+  </div>
+
+  <script type="module" src="/javascripts/profile.js"></script>
 </body>
 
 </html>

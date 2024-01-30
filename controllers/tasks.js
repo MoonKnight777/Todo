@@ -40,7 +40,7 @@ const updateTask = async (req, res) => {
     }
 }
 
-const deleteTask = async (req, res) => {
+const deleteTask = async (req, res,next) => {
     const id = req.params.id;
     try {
         const tasktodelete = await Tasks.findByIdAndDelete(id);
