@@ -80,7 +80,7 @@ const getMyTask = async (container) => {
         const updatebox = document.createElement("input");
         const deletebtn = document.createElement("button");
         taskelement.innerHTML = `${task.task}`;
-        deletebtn.innerHTML = '<i class="fa fa-trash-o" style="font-size:24px"></i>';
+        deletebtn.innerHTML = '\u{1F5D1}';
         updatebox.setAttribute("type", "checkbox")
         taskContainer.appendChild(taskelement);
         taskContainer.appendChild(updatebox);
@@ -147,7 +147,7 @@ createTaskForm.addEventListener('submit', (e) => {
 });
 
 container.addEventListener('click', (e) => {
-    if (e.target.tagName === 'BUTTON' && e.target.innerText === 'delete') {
+    if (e.target.tagName === 'BUTTON' && e.target.innerHTML === '\u{1F5D1}') {
         deleteMyTask(e);
     }
     if (e.target.tagName === 'INPUT' && e.target.type === 'checkbox') {

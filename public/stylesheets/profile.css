@@ -83,14 +83,16 @@ body, h1, h2, h3, p, button, input {
     margin-right:1rem;
     transform: scale(1.4);
   } 
-  button {
+  .taskContainer button {
     background-color: #dc3545;
     color: #fff;
     border: none;
     padding: 5px 10px;
     cursor: pointer;
     border-radius: 3px;
+    font-size: 20px;
   }
+  
   
  /* Styling for createTask section */
 .createTask {
